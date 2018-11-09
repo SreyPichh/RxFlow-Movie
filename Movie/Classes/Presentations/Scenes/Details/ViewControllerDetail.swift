@@ -1,32 +1,32 @@
 //
-//  ViewController.swift
+//  ViewControllerDetail.swift
 //  Movie
 //
-//  Created by Sreypich Phan on 11/5/18.
+//  Created by Sreypich Phan on 11/8/18.
 //  Copyright © 2018 Sreypich Phan. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-class ViewController: UIViewController {
-    var subview: ViewControllerSubview = ViewControllerSubview()
+class ViewControllerDetail: UIViewController {
+    var subview: ViewControllerDetailSubview = ViewControllerDetailSubview()
     public var viewModel: AppViewModel?
 }
-
-extension ViewController {
+extension ViewControllerDetail {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.view.addSubview(self.subview.label)
-        self.view.addSubview(self.subview.btn)
+        self.view.addSubview(self.subview.title)
+        self.view.addSubview(self.subview.text)
+        self.view.addSubview(self.subview.childFlowBtn)
+        self.view.addSubview(self.subview.back)
     }
     override func viewDidLayoutSubviews() {
         self.subview.updateConstraint()
     }
-    
     public func setViewModel(viewModel: AppViewModel) {
         self.viewModel = viewModel
     }
-    
-
 }
+

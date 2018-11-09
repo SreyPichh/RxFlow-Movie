@@ -32,8 +32,12 @@ class AppFlow: Flow {
         switch step {
         case .intro:
             return navigateToIntro()
-        default:
-            <#code#>
+        case .details:
+            return navigateToDetails()
+//        case .finish:
+//            return navigateToFinish()
+//        case .setupFlow:
+//            return navigateToSetupFlow()
         }
     }
 
@@ -43,18 +47,19 @@ class AppFlow: Flow {
 // MARK: - Navigate to Intro
 extension AppFlow {
     private func navigateToIntro() -> NextFlowItems {
-        let viewController = ViewController()
-        viewController.setViewModel(viewModel)
-        let nexFlowItem = NextFlowItem(nextPresentable: viewController, nextStepper: viewModel)
-        
+        let viewControllerIntro: ViewController = ViewController()
+        viewControllerIntro.setViewModel(viewModel: self.viewModel)
+        let nexFlowItem = NextFlowItem(nextPresentable: viewControllerIntro, nextStepper: viewModel)
+        return NextFlowItems.one(flowItem: nexFlowItem)
     }
 }
 
 // MARK: - Navigate to Details
 extension AppFlow {
     private func navigateToDetails() -> NextFlowItems {
-        let viewController = <#value#>
-        
-        let nextFlowItem = NextFlowItem(nextPresentable: viewController, nextStepper: viewModel)
+        let viewControllerDetail: ViewControllerDetail = ViewControllerDetail()
+        viewControllerDetail.setViewModel(viewModel: self.viewModel)
+        let nextFlowItem = NextFlowItem(nextPresentable: viewControllerDetail, nextStepper: viewModel)
     }
 }
+
