@@ -1,5 +1,5 @@
 //
-//  SetupStep.swift
+//  SetupStep1.swift
 //  Movie
 //
 //  Created by Sreypich Phan on 11/12/18.
@@ -7,10 +7,3 @@
 //
 
 import Foundation
-import RxFlow
-
-enum SetupStep {
-    case step1
-    case step2
-//    case exit
-}

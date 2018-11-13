@@ -14,16 +14,16 @@ class SetupViewModel: Stepper {
         self.toStep1()
     }
     public func toStep1() {
-        self.step.accept(SetupStep.step1)
+        self.step.accept(SetupStep.step1 as! Step)
         
     }
     
     public func toStep2() {
-        self.step.accept(SetupStep.step2)
+        self.step.accept(SetupStep.step2 as! Step)
     }
     
-    public func exit() {
-        self.step.accept(SetupStep.exit)
-    }
+//    public func exit() {
+//        self.step.accept(SetupStep.exit as! Step)
+//    }
 }
 

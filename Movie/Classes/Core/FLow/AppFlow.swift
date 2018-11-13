@@ -34,10 +34,10 @@ class AppFlow: Flow {
             return navigateToIntro()
         case .details:
             return navigateToDetails()
-//        case .finish:
-//            return navigateToFinish()
-//        case .setupFlow:
-//            return navigateToSetupFlow()
+        case .finish:
+            return navigateToFinish()
+        case .setupFlow:
+            return navigateToSetupFlow()
         }
     }
 
@@ -60,6 +60,25 @@ extension AppFlow {
         let viewControllerDetail: ViewControllerDetail = ViewControllerDetail()
         viewControllerDetail.setViewModel(viewModel: self.viewModel)
         let nextFlowItem = NextFlowItem(nextPresentable: viewControllerDetail, nextStepper: viewModel)
+        return NextFlowItems.one(flowItem: nextFlowItem)
+    }
+}
+
+extension AppFlow {
+    private func navigateToFinish() -> NextFlowItems {
+        let viewControllerDetail: ViewControllerDetail = ViewControllerDetail()
+        viewControllerDetail.setViewModel(viewModel: self.viewModel)
+        let nextFlowItem = NextFlowItem(nextPresentable: viewControllerDetail, nextStepper: viewModel)
+        return NextFlowItems.one(flowItem: nextFlowItem)
+    }
+}
+
+extension AppFlow {
+    private func navigateToSetupFlow() -> NextFlowItems {
+        let viewControllerDetail: ViewControllerDetail = ViewControllerDetail()
+        viewControllerDetail.setViewModel(viewModel: self.viewModel)
+        let nextFlowItem = NextFlowItem(nextPresentable: viewControllerDetail, nextStepper: viewModel)
+        return NextFlowItems.one(flowItem: nextFlowItem)
     }
 }
 
